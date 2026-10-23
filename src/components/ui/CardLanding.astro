@@ -4,19 +4,13 @@ interface Props {
 }
 const { post } = Astro.props;
 const hero = post?.data?.heroImage as string;
-const basePath = hero
-  ? `/assets${hero.startsWith("/") ? hero : `/${hero}`}`
+
+// Sécurité anti-doublon
+const basePath = hero 
+  ? (hero.startsWith("/assets") ? hero : `/assets${hero.startsWith("/") ? hero : `/${hero}`}`)
   : "";
-const widths = [320, 480, 640, 768, 960];
-const quality = 60;
-const srcset = basePath
-  ? widths
-      .map((w) => `${basePath}?nf_resize=fit&w=${w}&q=${quality} ${w}w`)
-      .join(", ")
-  : "";
-const sizes = "(max-width: 768px) 100vw, 50vw";
+
 import FormattedDate from "@/components/FormattedDate.astro";
-import { Picture } from "astro:assets";
 ---
 
 <a
@@ -24,17 +18,15 @@ import { Picture } from "astro:assets";
   class="relative gap-2 grid md:grid-cols-2 items-start"
 >
   {
-    hero && (
-      <Picture
+    basePath && (
+      <img
         src={basePath}
-        srcset={srcset}
-        sizes={sizes}
         alt={post.data.title}
         width="640"
         height="480"
-        class="miniature object-cover "
+        class="miniature object-cover w-full h-auto"
+        loading="lazy"
         decoding="async"
-        quality={20}
       />
     )
   }

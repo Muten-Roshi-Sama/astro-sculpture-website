@@ -6,9 +6,11 @@ import { getCollection } from 'astro:content';
 
 const sculptures = await getCollection('collection');
 
-// On ajoute "/assets" ici, uniquement pour le composant React
+// Sécurité anti-doublon : si l'image contient déjà /assets, on ne le rajoute pas.
 const carouselImages = sculptures.map((sculpture) => ({
-  src: `/assets${sculpture.data.heroImage}`, 
+  src: sculpture.data.heroImage.startsWith("/assets") 
+    ? sculpture.data.heroImage 
+    : `/assets${sculpture.data.heroImage}`,
   alt: sculpture.data.title,
 }));
 ---
@@ -16,7 +18,7 @@ const carouselImages = sculptures.map((sculpture) => ({
 <Layout>
   <div class="md:flex-row flex flex-col md:gap-10 relative md:pr-72 grow">
     <div class="relative hidden md:flex flex-1">
-      <h2 class="max-w-96 text-6xl md:text-8xl absolute text-center z-20 right-0 bottom-1/3 font-fugaz leading-tight">
+      <h2 class="text-6xl lg:text-8xl absolute text-center z-20 right-0 bottom-1/3 font-fugaz leading-tight">
         Deborah<br />Toussaint
       </h2>
       <p class="text-xl absolute bottom-1/4 right-0">Sculptrice</p>

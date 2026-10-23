@@ -15,7 +15,8 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
+// On met une de tes images par défaut pour le partage social (avec /assets/)
+const { title, description, image = "/assets/images/portfolio/sculptures/Sculpture_D-TOUSSAINT_01a.jpg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -82,11 +83,12 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props;
 <link rel="preconnect" href="https://api.iconify.design" crossorigin />
 
 <!-- Preload only the first hero image (responsive version) -->
+<!-- CORRECTION ICI : href et imagesrcset pointent vers la même image avec le bon chemin -->
 <link
   rel="preload"
   as="image"
-  href="/assets/city1-800.webp"
-  imagesrcset="/images/portfolio/sculptures/Sculpture_D-TOUSSAINT_01a.jpg"
+  href="/assets/images/portfolio/sculptures/Sculpture_D-TOUSSAINT_01a.jpg"
+  imagesrcset="/assets/images/portfolio/sculptures/Sculpture_D-TOUSSAINT_01a.jpg"
   imagesizes="(max-width: 768px) 90vw, 1200px"
   fetchpriority="high"
 />
