@@ -1,0 +1,49 @@
+---
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const hero = post?.data?.heroImage as string;
+const basePath = hero
+  ? `/assets${hero.startsWith("/") ? hero : `/${hero}`}`
+  : "";
+
+const getRandomMargin = () => {
+  const margins = ["mt-36", "mt-72", "mt-56", "mt-96"];
+  return margins[Math.floor(Math.random() * margins.length)];
+};
+var margin = "";
+if (post.id === "img2") {
+  margin = "!mt-0";
+}
+import FormattedDate from "@/components/FormattedDate.astro";
+import { Picture } from "astro:assets";
+---
+
+<li class={`${getRandomMargin()} + ${margin} relative`}>
+  <a
+    href={`/blog/${post.id}/`}
+    class="relative flex flex-col gap-2 p-6 max-w-96"
+  >
+    {
+      hero && (
+        <Picture
+          src={basePath}
+          alt={post.data.title}
+          quality={10}
+          width="400"
+          height="300"
+          class="w-full"
+        />
+      )
+    }
+
+    <p class="date font-semibold text-3xl">
+      <p>{post.data.title}</p>
+    </p>
+  </a>
+  <p class="absolute rotate-90 -right-6 bottom-24 font-bold">
+    <FormattedDate date={new Date(post.data.pubDate)} />
+  </p>
+</li>
