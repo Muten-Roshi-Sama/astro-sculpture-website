@@ -4,8 +4,6 @@ interface Props {
 }
 const { post } = Astro.props;
 const hero = post?.data?.heroImage as string;
-
-// Sécurité anti-doublon
 const basePath = hero 
   ? (hero.startsWith("/assets") ? hero : `/assets${hero.startsWith("/") ? hero : `/${hero}`}`)
   : "";
@@ -28,6 +26,5 @@ const basePath = hero
   }
   <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
     <h2 class="text-3xl text-white font-bold">{post.data.title}</h2>
-    <p class="text-gray-200">{post.data.description}</p>
   </div>
 </a>
