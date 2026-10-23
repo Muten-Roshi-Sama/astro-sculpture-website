@@ -3,23 +3,105 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="About Me"
-  description="Lorem ipsum dolor sit amet"
+  title="À propos - Déborah Toussaint"
+  description="Découvrez le parcours, la formation et les expositions de Déborah Toussaint, sculptrice."
   pubDate={new Date("August 08 2021")}
-  heroImage="/blog-placeholder-about.jpg"
+  heroImage="/assets/images/portfolio/about/Deborah_Toussaint_Sculpteure.jpg"
 >
-  <section
-    class="flex grow py-10 flex-col pb-40 justify-center items-center"
-  >
-    <h1 class="text-5xl md:text-7xl font-fugaz font-bold py-20 max-w-72">Know the artist</h1>
-    <p class="max-w-72">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum delectus
-      ad voluptatibus excepturi, nam illum? Ipsum dolore laboriosam ipsam maxime
-      consequatur incidunt nisi vero suscipit facilis mollitia! Labore,
-      consequatur illo laudantium fugiat earum enim suscipit sequi similique
-      atque eveniet quibusdam hic facere asperiores eligendi sunt molestias
-      aperiam, dolores laboriosam reprehenderit repudiandae! Animi a inventore
-      eaque error.
-    </p>
+  <section class="flex grow py-10 flex-col pb-40 justify-center items-center px-6">
+    <div class="max-w-3xl w-full text-left">
+      
+      <h1 class="text-5xl md:text-7xl font-fugaz font-bold py-10 text-center md:text-left">
+        Déborah Toussaint
+      </h1>
+      
+      <!-- Biographie -->
+      <div class="text-lg leading-relaxed mb-12">
+        <p class="mb-6">
+          La matière me passionne… quelle qu’elle soit – métal, verre, terre, porcelaine, papier – elle autorise un retour à soi, à l’essentiel. C’est une expérience forte et grisante mais j’avoue avoir une affection toute particulière pour le métal. L’origami est une de mes sources d’inspiration. Il m’intéresse par la forme et la dynamique qu’il génère.
+        </p>
+        <p>
+          Après avoir fait une petite incursion en école d’art, je continue actuellement mon chemin dans un atelier de ferronnerie travaillant différents métaux ferreux dont le métal, l’inox ou le corten… des formats d’intérieur aux sculptures monumentales pour espaces publics et jardins.
+        </p>
+      </div>
+
+      <!-- Formation -->
+      <h2 class="text-3xl font-fugaz font-bold mb-6 mt-12 border-b pb-2">
+        Ma formation
+      </h2>
+      <ul class="list-none space-y-4 mb-12 text-lg">
+        <li class="flex flex-col md:flex-row md:gap-4">
+          <span class="font-bold w-32 shrink-0">2017 - 2019</span>
+          <span>École des arts de Braine l’Alleud en art du verre.</span>
+        </li>
+        <li class="flex flex-col md:flex-row md:gap-4">
+          <span class="font-bold w-32 shrink-0">2016 - ...</span>
+          <span>Réalisations de sculptures dans un atelier de ferronnerie.</span>
+        </li>
+        <li class="flex flex-col md:flex-row md:gap-4">
+          <span class="font-bold w-32 shrink-0">2013 - 2015</span>
+          <span>Academie voor Beeldende Kunsten Anderlecht (keramiek).</span>
+        </li>
+        <li class="flex flex-col md:flex-row md:gap-4">
+          <span class="font-bold w-32 shrink-0">2004 - 2009</span>
+          <span>École des arts d’Anderlecht (sculpture).</span>
+        </li>
+      </ul>
+
+      <!-- Expositions -->
+      <h2 class="text-3xl font-fugaz font-bold mb-6 mt-12 border-b pb-2">
+        Mes expositions
+      </h2>
+      <div class="space-y-8 text-lg">
+        
+        <div>
+          <h3 class="font-bold text-2xl mb-3">2020</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>« Shoah, regards d’artistes », douzième édition de « Devoir de mémoire » à la Maison des Artistes d’Anderlecht. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-2xl mb-3">2019</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Parcours d’artistes d’Ixelles we.art.xl. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+            <li>Exposition de sculpture monumentale au square Armand Steurs à Saint-Josse-ten-Noode. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+            <li>Inauguration de la sculpture “Interdépendance” au Centre culturel d’Anderlecht Escale du Nord (Scheut). <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+            <li>Exposition de sculpture “Pas à pas” à Louveigné. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+            <li>Exposition à L’Armillaire, centre culturel de Jette dans le cadre du parcours d’artistes de Jette. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-2xl mb-3">2018</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Exposition de sculpture monumentale au square Armand Steurs à Saint-Josse-ten-Noode. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+            <li>Exposition de sculptures de verre à la galerie Arte Capelli à Linkebeek. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-2xl mb-3">2017</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Parcours d’artistes 2017 Uccle – Linkebeek – Drogenbos à la galerie Arte Capelli. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-2xl mb-3">2009</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Exposition Energie – Végétale des œuvres de Déborah Toussaint et David Mauquoy à la bibliothèque communale de Saint-Josse. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-2xl mb-3">2007</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Exposition ¿be-autiful au Beligicarium ? dans l’ancienne usine désaffectée Pfizer à Jette. <a href="#" class="text-blue-500 hover:underline">En savoir plus...</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
   </section>
 </Layout>
